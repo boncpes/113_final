@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    unsigned int i,j,n,c,k,tmp;
+    int i,j,n,c,k,tmp;
     int num[5];
-    scanf("%u %u",&n,&c);
+    scanf("%d %d",&n,&c);
     tmp=n;
     k=1;
     while(k)
@@ -19,7 +19,7 @@ int main()
         {
             if(num[j]==c)
             {
-                printf("%u",tmp);
+                printf("%d",tmp);
                 k=0;
                 break;
             }

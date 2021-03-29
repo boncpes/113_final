@@ -5,14 +5,33 @@
 int main()
 {
     char like[10000]="";
+    char loob[10000]="";
     char w;
-    int loop[10]={0};
-    int n,i,j,k;
+    int loli[10000]={0};
+    int n,i,j,k,c;
     scanf("%d",&n);
     scanf(" %[^\n]s",like);
-    for(i=0;i<strlen(like);i++)
+    char *pch=strtok(like," ");
+    while(pch!=NULL)
     {
-
+        k=atoi(pch);
+        loli[k-1]++;
+        pch=strtok(NULL," ");
+    }
+    int max=loli[0];
+    for(i=0;i<10000;i++)
+    {
+        if(loli[i]>max)
+        {
+            max=loli[i];
+        }
+    }
+    for(i=0;i<10000;i++)
+    {
+        if(loli[i]==max)
+        {
+            printf("%d ",i+1);
+        }
     }
     return 0;
 }
