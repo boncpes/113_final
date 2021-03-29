@@ -27,13 +27,17 @@ int main()
             row[i]+=mat1[j][i];
         }
     }
-    for(i=0; i<n1; i++)
+    if(t1==t2)
     {
-        if(t1==row[i]&&t1==co[i]&&t2==t1)
+        for(i=0; i<n1; i++)
         {
-            c++;
+            if(co[i]==row[i])
+            {
+                c++;
+            }
         }
     }
+
     for(i=0; i<n2; i++)
     {
         co[i]=0;
@@ -47,7 +51,7 @@ int main()
                 t1+=mat2[i][j];
             }
         }
-        t2+=mat2[i][(i-(n1-1))*-1];
+        t2+=mat2[i][(i-(n2-1))*-1];
     }
     for(i=0; i<n2; i++)
     {
@@ -56,11 +60,14 @@ int main()
             row[i]+=mat2[j][i];
         }
     }
-    for(i=0; i<n2; i++)
+    if(t1==t2)
     {
-        if(t1==row[i]&&t1==co[i]&&t2==t1)
+        for(i=0; i<n2; i++)
         {
-            v++;
+            if(co[i]==row[i])
+            {
+                v++;
+            }
         }
     }
     for(i=0; i<n3; i++)
@@ -76,7 +83,7 @@ int main()
                 t1+=mat3[i][j];
             }
         }
-        t2+=mat3[i][(i-(n1-1))*-1];
+        t2+=mat3[i][(i-(n3-1))*-1];
     }
     for(i=0; i<n3; i++)
     {
@@ -85,11 +92,14 @@ int main()
             row[i]+=mat3[j][i];
         }
     }
-    for(i=0; i<n2; i++)
+    if(t1==t2)
     {
-        if(t1==row[i]&&t1==co[i]&&t2==t1)
+        for(i=0; i<n3; i++)
         {
-            q++;
+            if(co[i]==row[i])
+            {
+                q++;
+            }
         }
     }
     if(c==n1)
@@ -116,6 +126,7 @@ int main()
     {
         printf("yes\n");
     }
+
     return 0;
 }
 
